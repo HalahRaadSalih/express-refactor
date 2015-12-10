@@ -1,15 +1,12 @@
 var express = require('express');
 var app = express();
+var Song = require('./models/Song');
 
 app.set('view engine', 'ejs');
-// app.set('views', 'views' );
 app.use(express.static("assets"));
 
-song = {
-  verse1: 'This is the song that never ends',
-  verse2: 'Yea some people started it not knowing what it was',
-  verse3: 'And they\'ll continue singing it because',
-}
+// create song object
+var song = new Song();
 
 app.get('/', function(req, res) {
   res.render('index');
