@@ -49,7 +49,7 @@ app.get('/song/1/2/3', function(req, res) {
   });
 });
 
-var server = app.listen(3000, function () {
+var server = app.listen(3001, function () {
   var port = server.address().port;
   console.log('Server up and listening on', port);
 });
