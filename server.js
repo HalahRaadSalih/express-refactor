@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var Song = require('./models/Song');
+var routes = require('./controllers/routes');
 
 app.set('view engine', 'ejs');
 app.use(express.static("assets"));
@@ -9,41 +10,27 @@ app.use(express.static("assets"));
 var song = new Song();
 
 app.get('/', function(req, res) {
-  res.render('index');
+  routes['/'](req,res);
 });
 
 app.get('/song/edit', function(req, res) {
-  res.render('edit');
+  routes['/song/edit'](req,res);
 });
 
 app.get('/song/update', function(req, res) {
-  if (req.query.verse1 !== undefined) {
-    song.verse1 = req.query.verse1;
-    song.verse2 = req.query.verse2;
-    song.verse3 = req.query.verse3;
-  }
-  res.redirect('/');
+  routes['/song/update'](req,res, song);
 })
 
-app.get('/song/1', function(req, res) {
-  res.render('song', {
-    pageInfo: song.verse1,
-    nextPage: '1/2',
-  });
+app.get('/song/:num', function(req, res) {
+  routes['/song/:num'](req,res, song);
 });
 
 app.get('/song/1/2', function(req, res) {
-  res.render('song', {
-    pageInfo: song.verse2,
-    nextPage: '2/3',
-  });
+  routes['/song/1/2'](req,res, song);
 });
 
 app.get('/song/1/2/3', function(req, res) {
-  res.render('song', {
-    pageInfo: song.verse3,
-    nextPage: '/song/1',
-  });
+  routes['/song/1/2/3'](req,res,song);
 });
 
 var server = app.listen(3001, function () {
