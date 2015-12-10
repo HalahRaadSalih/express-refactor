@@ -3,7 +3,7 @@ var app = express();
 
 app.set('view engine', 'ejs');
 app.set('views', __dirname );
-app.use(express.static(__dirname));
+app.use(express.static("assets"));
 
 song = {
   verse1: 'This is the song that never ends',
