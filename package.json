@@ -1,0 +1,25 @@
+{
+  "name": "express-refactor",
+  "version": "1.0.0",
+  "description": "You've been hired as a contractor by Never Ending Song Inc. to refactor their new website prototype. Their previous engineer has been fired over this awfully managed project, and you have been brought on to salvage the code.",
+  "main": "server.js",
+  "dependencies": {
+    "ejs": "^2.3.4",
+    "express": "^4.13.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HalahRaadSalih/express-refactor.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HalahRaadSalih/express-refactor/issues"
+  },
+  "homepage": "https://github.com/HalahRaadSalih/express-refactor#readme"
+}
