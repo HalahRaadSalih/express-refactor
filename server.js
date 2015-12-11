@@ -6,7 +6,7 @@ app.set('view engine', 'ejs');
 app.use(express.static("assets"));
 app.use('/', router);
 
-var server = app.listen(3001, function () {
+var server = app.listen(process.env.port || 3001, function () {
   var port = server.address().port;
   console.log('Server up and listening on', port);
 });
